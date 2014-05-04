@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Gameboy - Gamepad - How does it work?">
+	<meta name="author" content="Chaotic Gabibo">
+	<meta name="keywords" content="gameboy, gamepad, joypad, pad">
+
+	<!-- TODO -->
+	<!-- Creative Commons – Attribution (CC BY 3.0) Game Boy designed by Dianatomic from the Noun Project -->
+	<!-- White background -->
+	<!-- <link rel="icon" href="icon/favicon.ico" type="image/x-icon"> -->
+	<!-- Transparent background -->
+	<!-- <link rel="icon" href="icon/favicon.png" type="image/png"> -->
+	<!-- <link rel="icon" href="icon/favicon.svn" type="image/svn"> -->
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+
+	<link href="css/gamepad.css" rel="stylesheet">
+
+	<title>Gameboy DMG/CGB Gamepad</title>
+
+</head>
+<body role="document">
+
+	<div class="container theme-showcase" role="main">
+		<div class="page-header">
+			<h1>Gameboy Gamepad</h1>
+		</div>
+		
+		<div class="table-responsive text-center reg-table">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Register P1<br/>0xFF00</th>
+						<th>7</th>
+						<th>6</th>
+						<th>5</th>
+						<th>4</th>
+						<th>3</th>
+						<th>2</th>
+						<th>1</th>
+						<th>0</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Port</td>
+						<td>Not<br/>used</td>
+						<td>Not<br/>used</td>
+						<td>P15</td>
+						<td>P14</td>
+						<td>P13</td>
+						<td>P12</td>
+						<td>P11</td>
+						<td>P10</td>
+					</tr>
+					<tr>
+						<td>
+							Value
+						</td>
+						<td>
+							<!-- BIT 7 - NOT USED -->
+							<svg id="bit7" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Cross -->
+								<g stroke="black" stroke-linecap="round" stroke-width="15">
+									<line x1="30" y1="30" x2="70" y2="70" />
+									<line x1="70" y1="30" x2="30" y2="70" />
+								</g>
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 6 - NOT USED -->
+							<svg id="bit6" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+
+								<g stroke="black" stroke-linecap="round" stroke-width="15">
+									<line x1="30" y1="30" x2="70" y2="70" />
+									<line x1="70" y1="30" x2="30" y2="70" />
+								</g>
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 5 - P15 - Read buttons -->
+							<input id="bit5" value="0" hidden />
+							<svg id="bit5-one" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- One -->
+								<line x1="50" y1="30" x2="50" y2="70"
+								stroke="black" stroke-linecap="round" stroke-width="15" />
+							</svg>
+							<svg id="bit5-zero" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Zero -->
+								<ellipse cx="50" cy="50" rx="25" ry="25"
+								stroke="black" fill="transparent" stroke-width="15" />
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 4 - P14 - Read directions -->
+							<input id="bit4" value="0" hidden />
+							<svg id="bit4-one" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- One -->
+								<line x1="50" y1="30" x2="50" y2="70"
+								stroke="black" stroke-linecap="round" stroke-width="15" />
+							</svg>
+							<svg id="bit4-zero" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Zero -->
+								<ellipse cx="50" cy="50" rx="25" ry="25" stroke="black"
+								fill="transparent" stroke-width="15" />
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 3 - P13 - Down or Start -->
+							<svg id="bit3-one" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- One -->
+								<line x1="50" y1="30" x2="50" y2="70"
+								stroke="black" stroke-linecap="round" stroke-width="15" />
+							</svg>
+							<svg id="bit3-zero" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Zero -->
+								<ellipse cx="50" cy="50" rx="25" ry="25"
+								stroke="black" fill="transparent" stroke-width="15" />
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 2 - P12 - Up or Select -->
+							<svg id="bit2-one" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- One -->
+								<line x1="50" y1="30" x2="50" y2="70"
+								stroke="black" stroke-linecap="round" stroke-width="15" />
+							</svg>
+							<svg id="bit2-zero" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Zero -->
+								<ellipse cx="50" cy="50" rx="25" ry="25"
+								stroke="black" fill="transparent" stroke-width="15" />
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 1 - P11 - Left or B -->
+							<svg id="bit1-one" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- One -->
+								<line x1="50" y1="30" x2="50" y2="70"
+								stroke="black" stroke-linecap="round" stroke-width="15" />
+							</svg>
+							<svg id="bit1-zero" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Zero -->
+								<ellipse cx="50" cy="50" rx="25" ry="25"
+								stroke="black" fill="transparent" stroke-width="15" />
+							</svg>
+						</td>
+						<td>
+							<!-- BIT 0 - P10 - Right or A -->
+							<svg id="bit0-one" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- One -->
+								<line x1="50" y1="30" x2="50" y2="70"
+								stroke="black" stroke-linecap="round" stroke-width="15" />
+							</svg>
+							<svg id="bit0-zero" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Frame square -->
+								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+								stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Zero -->
+								<ellipse cx="50" cy="50" rx="25" ry="25"
+								stroke="black" fill="transparent" stroke-width="15" />
+							</svg>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
+		<div>
+			<table>
+				<tbody>
+					<tr>
+						<td></td>
+						<td>
+							<svg id="up-released" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="transparent" />
+								
+								<!-- Arrow -->
+								<g stroke="black" stroke-width="10" stroke-linecap="round"
+								transform="rotate(-90 50 50)">
+									<!-- Arrow head -->
+									<polyline points="50 30, 70 50, 50 70"
+									 stroke-linejoin="round" fill="none" />
+
+									<!-- Arrow body -->
+									<line x1="30" y1="50" x2="65" y2="50" />
+								</g>
+							</svg>
+							<svg id="up-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" />
+
+								<!-- Arrow -->
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								stroke="white" stroke-width="10" stroke-linejoin="round" transform="rotate(-90 50 50)"
+								stroke-linecap="round" fill="none" />
+
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50"
+								stroke="white" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+							</svg>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<svg id="left-released" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="transparent" />
+								<!-- Arrow -->
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								stroke="black" stroke-width="10" stroke-linejoin="round" transform="rotate(180 50 50)"
+								stroke-linecap="round" fill="none" />
+
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50"
+								stroke="black" stroke-width="10" stroke-linecap="round" transform="rotate(180 50 50)"/>
+							</svg>
+							<svg id="left-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" />
+
+								<!-- Arrow -->
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								stroke="white" stroke-width="10" stroke-linejoin="round" transform="rotate(180 50 50)"
+								stroke-linecap="round" fill="none" />
+
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50"
+								stroke="white" stroke-width="10" stroke-linecap="round" transform="rotate(180 50 50)"/>
+							</svg>
+						</td>
+						<td></td>
+						<td>
+							<svg id="right-released" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="transparent" />
+
+								<!-- Arrow -->
+								<g>
+									<!-- Arrow head -->
+									<polyline points="50 30, 70 50, 50 70"
+									stroke="black" stroke-width="10" stroke-linejoin="round"
+									stroke-linecap="round" fill="none" />
+									
+									<!-- Arrow body -->
+									<line x1="30" y1="50" x2="65" y2="50"
+									stroke="black" stroke-width="10" stroke-linecap="round" />
+								</g>
+							</svg>
+							<svg id="right-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" />
+								<g>
+									<!-- Arrow head -->
+									<polyline points="50 30, 70 50, 50 70"
+									stroke="white" stroke-width="10" stroke-linejoin="round"
+									stroke-linecap="round" fill="none" />
+
+									<!-- Arrow body -->
+									<line x1="30" y1="50" x2="65" y2="50"
+									stroke="white" stroke-width="10" stroke-linecap="round" />
+								</g>
+							</svg>
+						</td>
+						<td>
+							<svg id="a-released" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="transparent" />
+		
+								<!-- Button text -->
+								<text x="50" y="65" text-anchor="middle" font-weight="bold"
+								font-family="Arial Black" font-size="50">A</text>
+							</svg>
+							<svg id="a-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="black"/>
+		
+								<!-- Button text -->
+								<text x="50" y="65" text-anchor="middle" font-weight="bold"
+								font-family="Arial Black" font-size="50" fill="white">A</text>
+							</svg>
+						</td>
+						<td>
+							<svg id="b-released" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="transparent" />
+		
+								<!-- Button text -->
+								<text x="50" y="67" text-anchor="middle" font-weight="bold"
+								font-family="Arial Black" font-size="50">B</text>
+							</svg>
+							<svg id="b-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="black"/>
+		
+								<!-- Button text -->
+								<text x="50" y="67" text-anchor="middle" font-weight="bold"
+								font-family="Arial Black" font-size="50" fill="white">B</text>
+							</svg>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<svg id="down-released" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" fill="transparent" />
+								<g transform="rotate(90 50 50)">
+									<!-- Arrow head -->
+									<polyline points="50 30, 70 50, 50 70"
+									stroke="black" stroke-width="10" stroke-linejoin="round"
+									stroke-linecap="round" fill="none" />
+
+									<!-- Arrow body -->
+									<line x1="30" y1="50" x2="65" y2="50"
+									stroke="black" stroke-width="10" stroke-linecap="round"/>
+								</g>
+							</svg>
+							<svg id="down-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1"
+							width="50" height="50" viewBox="0 0 100 100">
+
+								<!-- Outer circle -->
+								<circle cx="50" cy="50" r="40"
+								stroke="black" stroke-width="10" />
+								<g transform="rotate(90 50 50)">
+									<!-- Arrow head -->
+									<polyline points="50 30, 70 50, 50 70"
+									stroke="white" stroke-width="10" stroke-linejoin="round"
+									stroke-linecap="round" fill="none" />
+
+									<!-- Arrow body -->
+									<line x1="30" y1="50" x2="65" y2="50"
+									stroke="white" stroke-width="10" stroke-linecap="round" />
+								</g>
+							</svg>
+						</td>
+						<td></td>
+						<td>
+							<svg id="start-released" xmlns="http://www.w3.org/2000/svg" version="1.1" height="50" viewBox="0 0 270 100">
+								<!-- Outer circle -->
+								<rect x="10" y="10" rx="10" ry="10" width="250" height="80" stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Button text -->
+								<text x="135" y="67" text-anchor="middle" font-weight="bold" font-family="Arial Black" font-size="50">START</text>
+							</svg>
+							<svg id="start-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1" height="50" viewBox="0 0 270 100">
+								<!-- Outer circle -->
+								<rect x="10" y="10" rx="10" ry="10" width="250" height="80" stroke="black" fill="black" stroke-width="10"/>
+								<!-- Button text -->
+								<text x="135" y="67" text-anchor="middle" font-weight="bold" font-family="Arial Black" font-size="50" fill="white">START</text>
+							</svg>
+						</td>
+						<td>
+							<svg id="select-released" xmlns="http://www.w3.org/2000/svg" version="1.1" height="50" viewBox="0 0 270 100">
+								<!-- Outer circle -->
+								<rect x="10" y="10" rx="10" ry="10" width="250" height="80" stroke="black" fill="transparent" stroke-width="10"/>
+								<!-- Button text -->
+								<text x="135" y="67" text-anchor="middle" font-weight="bold" font-family="Arial Black" font-size="50">SELECT</text>
+							</svg>
+							<svg id="select-pressed" xmlns="http://www.w3.org/2000/svg" version="1.1" height="50" viewBox="0 0 270 100">
+								<!-- Outer circle -->
+								<rect x="10" y="10" rx="10" ry="10" width="250" height="80" stroke="black" fill="black" stroke-width="10"/>
+								<!-- Button text -->
+								<text x="135" y="67" text-anchor="middle" font-weight="bold" font-family="Arial Black" font-size="50" fill="white">SELECT</text>
+							</svg>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	<div>
+		<h2>Controls</h3>
+		<ul class="list-group">
+		  <li class="list-group-item">
+		    <span class="badge">Z</span>A
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">X</span>B
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">C</span>START
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">V</span>SELECT
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">↑</span>UP
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">↓</span>DOWN
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">←</span>LEFT
+		  </li>
+		  <li class="list-group-item">
+		    <span class="badge">→</span>RIGHT
+		  </li>
+		  
+		</ul>
+	</div>
+	
+	<div>
+		<h2>References</h3>
+	</div>
+	
+	<div>
+		<h2>Github</h3>
+	</div>
+	
+
+	<div>
+		<h2>Copyright</h3>
+	</div>
+
+
+	</div>
+	
+		<!-- Bootstrap core JavaScript -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/docs.min.js"></script>
+		<script src="js/model/key.js"></script>
+		<script>
+		function updateUI() {
+			var P1 = KEY.rb();
+			if ((P1 & 0x1) === 0x1) {
+				$('#bit0-zero').hide();
+				$('#bit0-one').show();
+			} else {
+				$('#bit0-zero').show();
+				$('#bit0-one').hide();
+			}
+			if ((P1 & 0x2) === 0x2) {
+				$('#bit1-zero').hide();
+				$('#bit1-one').show();
+			} else {
+				$('#bit1-zero').show();
+				$('#bit1-one').hide();
+			}
+			if ((P1 & 0x4) === 0x4) {
+				$('#bit2-zero').hide();
+				$('#bit2-one').show();
+			} else {
+				$('#bit2-zero').show();
+				$('#bit2-one').hide();
+			}
+			if ((P1 & 0x8) === 0x8) {
+				$('#bit3-zero').hide();
+				$('#bit3-one').show();
+			} else {
+				$('#bit3-zero').show();
+				$('#bit3-one').hide();
+			}
+			if ($("#bit4").attr("value") == "1") {
+				$('#bit4-zero').hide();
+				$('#bit4-one').show();
+			} else {
+				$('#bit4-zero').show();
+				$('#bit4-one').hide();
+			}
+			if ($("#bit5").attr("value") == "1") {
+				$('#bit5-zero').hide();
+				$('#bit5-one').show();
+			} else {
+				$('#bit5-zero').show();
+				$('#bit5-one').hide();
+			}
+			if (KEY.isAPressed) {
+				$('#a-released').hide();
+				$('#a-pressed').show();
+			} else {
+				$('#a-released').show();
+				$('#a-pressed').hide();
+			}
+			if (KEY.isBPressed) {
+				$('#b-released').hide();
+				$('#b-pressed').show();
+			} else {
+				$('#b-released').show();
+				$('#b-pressed').hide();
+			}
+			if (KEY.isStartPressed) {
+				$('#start-released').hide();
+				$('#start-pressed').show();
+			} else {
+				$('#start-released').show();
+				$('#start-pressed').hide();
+			}
+			if (KEY.isSelectPressed) {
+				$('#select-released').hide();
+				$('#select-pressed').show();
+			} else {
+				$('#select-released').show();
+				$('#select-pressed').hide();
+			}
+			if (KEY.isUpPressed) {
+				$('#up-released').hide();
+				$('#up-pressed').show();
+			} else {
+				$('#up-released').show();
+				$('#up-pressed').hide();
+			}
+			if (KEY.isDownPressed) {
+				$('#down-released').hide();
+				$('#down-pressed').show();
+			} else {
+				$('#down-released').show();
+				$('#down-pressed').hide();
+			}
+			if (KEY.isRightPressed) {
+				$('#right-released').hide();
+				$('#right-pressed').show();
+			} else {
+				$('#right-released').show();
+				$('#right-pressed').hide();
+			}
+			if (KEY.isLeftPressed) {
+				$('#left-released').hide();
+				$('#left-pressed').show();
+			} else {
+				$('#left-released').show();
+				$('#left-pressed').hide();
+			}
+		}
+		$('#bit5-zero').click(function() {
+			$('#bit5-zero').hide();
+			$('#bit5-one').show();
+			$("#bit5").attr("value","1");
+			KEY.wb(parseInt("00" + $("#bit5").val() + $("#bit4").val() + "0000",2));
+			updateUI();
+		});
+		$('#bit4-zero').click(function() {
+			$('#bit4-zero').hide();
+			$('#bit4-one').show();
+			$("#bit4").attr("value","1");
+			KEY.wb(parseInt("00" + $("#bit5").val() + $("#bit4").val() + "0000",2));
+			updateUI();
+		});
+		$('#bit5-one').click(function() {
+			$('#bit5-one').hide();
+			$('#bit5-zero').show();
+			$("#bit5").attr("value","0");
+			KEY.wb(parseInt("00" + $("#bit5").val() + $("#bit4").val() + "0000",2));
+			updateUI();
+		});
+		$('#bit4-one').click(function() {
+			$('#bit4-one').hide();
+			$('#bit4-zero').show();
+			$("#bit4").attr("value","0");
+			KEY.wb(parseInt("00" + $("#bit5").val() + $("#bit4").val() + "0000",2));
+			updateUI();
+		});
+	
+		$(document).ready(function() {
+			KEY.reset();
+			updateUI();
+		});
+	
+		$(document).keydown(function(e) {
+			KEY.keydown(e);
+			updateUI();
+		});
+		$(document).keyup(function(e) {
+			KEY.keyup(e);
+			updateUI();
+		});
+		</script>
+	</body>
+	</html>
