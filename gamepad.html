@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Meta -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,9 @@
 	<meta name="description" content="Gameboy - Gamepad - How does it work?">
 	<meta name="author" content="Chaotic Gabibo">
 	<meta name="keywords" content="gameboy, gamepad, joypad, pad">
-
-	<!-- TODO -->
-	<!-- Creative Commons – Attribution (CC BY 3.0) Game Boy designed by Dianatomic from the Noun Project -->
-	<!-- White background -->
-	<!-- <link rel="icon" href="icon/favicon.ico" type="image/x-icon"> -->
-	<!-- Transparent background -->
-	<!-- <link rel="icon" href="icon/favicon.png" type="image/png"> -->
-	<!-- <link rel="icon" href="icon/favicon.svn" type="image/svn"> -->
+	
+	<!-- Favicon -->
+	<link rel="icon" href="favicon/favicon.png" type="image/png">
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -24,443 +20,769 @@
 	<link href="css/gamepad.css" rel="stylesheet">
 
 	<title>Gameboy DMG/CGB Gamepad</title>
-
+	
 </head>
 <body role="document">
 
-	<div class="container theme-showcase" role="main">
+	<div role="main" class="container">
 		<div class="page-header">
-			<h1>Gameboy Gamepad</h1>
+			<h1><img src="favicon/favicon.png" alt="Favicon" width="40"/>Gameboy Gamepad <small> Register P1 0xFF00 </small></h1>
 		</div>
 		
-		<div class="table-responsive text-center reg-table">
-			<table class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Register P1<br/>0xFF00</th>
-						<th>7</th>
-						<th>6</th>
-						<th>5</th>
-						<th>4</th>
-						<th>3</th>
-						<th>2</th>
-						<th>1</th>
-						<th>0</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Port</td>
-						<td>Not<br/>used</td>
-						<td>Not<br/>used</td>
-						<td>P15</td>
-						<td>P14</td>
-						<td>P13</td>
-						<td>P12</td>
-						<td>P11</td>
-						<td>P10</td>
-					</tr>
-					<tr>
-						<td>
-							Value
-						</td>
-						<td>
-							<!-- BIT 7 - NOT USED -->
-							<svg id="bit7" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- Cross -->
-								<g stroke="black" stroke-linecap="round" stroke-width="15">
-									<line x1="30" y1="30" x2="70" y2="70" />
-									<line x1="70" y1="30" x2="30" y2="70" />
-								</g>
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 6 - NOT USED -->
-							<svg id="bit6" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
+		
+		<table style="margin:0 auto;">
+			<tbody>
+				<tr>
+					<td></td>
+					<td>
+						<svg id="up" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Outer circle -->
+							<circle cx="50" cy="50" r="40"
+							stroke="black" stroke-width="10" fill="transparent" />
+							
+							<!-- Arrow -->
+							<g transform="rotate(-90 50 50)" stroke="black"
+							stroke-width="10" stroke-linecap="round">
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								 stroke-linejoin="round" fill="none" />
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50" />
+							</g>
+						</svg>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<svg id="left" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Outer circle -->
+							<circle cx="50" cy="50" r="40"
+							stroke="black" stroke-width="10" fill="transparent" />
+							
+							<!-- Arrow -->
+							<g transform="rotate(180 50 50)" stroke="black"
+							stroke-width="10" stroke-linecap="round">
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								 stroke-linejoin="round" fill="none" />
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50" />
+							</g>
+						</svg>
+					</td>
+					<td></td>
+					<td>
+						<svg id="right" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Outer circle -->
+							<circle cx="50" cy="50" r="40"
+							stroke="black" stroke-width="10" fill="transparent" />
+							
+							<!-- Arrow -->
+							<g stroke="black"
+							stroke-width="10" stroke-linecap="round">
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								 stroke-linejoin="round" fill="none" />
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50" />
+							</g>
+						</svg>
+					</td>
+					<td>
+						<svg id="a" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Outer circle -->
+							<circle cx="50" cy="50" r="40"
+							stroke="black" stroke-width="10" fill="transparent" />
+	
+							<!-- Button text -->
+							<text x="50" y="65" text-anchor="middle" font-weight="bold"
+							font-family="Arial Black" font-size="50">A</text>
+						</svg>
+					</td>
+					<td>
+						<svg id="b" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Outer circle -->
+							<circle cx="50" cy="50" r="40"
+							stroke="black" stroke-width="10" fill="transparent" />
+	
+							<!-- Button text -->
+							<text x="50" y="67" text-anchor="middle" font-weight="bold"
+							font-family="Arial Black" font-size="50">B</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<svg id="down" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Outer round square -->
+							<circle cx="50" cy="50" r="40"
+							stroke="black" stroke-width="10" fill="transparent" />
+							
+							<!-- Arrow -->
+							<g transform="rotate(90 50 50)" stroke="black"
+							stroke-width="10" stroke-linecap="round">
+								<!-- Arrow head -->
+								<polyline points="50 30, 70 50, 50 70"
+								 stroke-linejoin="round" fill="none" />
+								<!-- Arrow body -->
+								<line x1="30" y1="50" x2="65" y2="50" />
+							</g>
+						</svg>
+					</td>
+					<td></td>
+					<td>
+						<svg id="start" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="135" height="50" viewBox="0 0 270 100">
+							<!-- Outer round square -->
+							<rect x="10" y="10" rx="10" ry="10" width="250" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- Button text -->
+							<text x="135" y="67" text-anchor="middle" font-weight="bold"
+							font-family="Arial Black" font-size="50">START</text>
+						</svg>
+					</td>
+					<td>
+						<svg id="select" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="135" height="50" viewBox="0 0 270 100">
+							<!-- Outer round square -->
+							<rect x="10" y="10" rx="10" ry="10" width="250" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- Button text -->
+							<text x="135" y="67" text-anchor="middle" font-weight="bold"
+							font-family="Arial Black" font-size="50">SELECT</text>
+						</svg>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
 
-								<g stroke="black" stroke-linecap="round" stroke-width="15">
-									<line x1="30" y1="30" x2="70" y2="70" />
-									<line x1="70" y1="30" x2="30" y2="70" />
-								</g>
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 5 - P15 - Read buttons -->
-							<input id="P15" value="0" hidden />
-							<svg id="bit5" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- One -->
-								<line class="one" x1="50" y1="30" x2="50" y2="70"
-								stroke="black" stroke-linecap="round" stroke-width="15" />
-								<!-- Zero -->
-								<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
-								stroke="black" fill="transparent" stroke-width="15" />
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 4 - P14 - Read directions -->
-							<input id="P14" value="0" hidden />
-							<svg id="bit4" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- One -->
-								<line class="one" x1="50" y1="30" x2="50" y2="70"
-								stroke="black" stroke-linecap="round" stroke-width="15" />
-								<!-- Zero -->
-								<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
-								stroke="black" fill="transparent" stroke-width="15" />
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 3 - P13 - Down or Start -->
-							<svg id="bit3" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- One -->
-								<line class="one" x1="50" y1="30" x2="50" y2="70"
-								stroke="black" stroke-linecap="round" stroke-width="15" />
-								<!-- Zero -->
-								<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
-								stroke="black" fill="transparent" stroke-width="15" />
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 2 - P12 - Up or Select -->
-							<svg id="bit2" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- One -->
-								<line class="one" x1="50" y1="30" x2="50" y2="70"
-								stroke="black" stroke-linecap="round" stroke-width="15" />
-								<!-- Zero -->
-								<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
-								stroke="black" fill="transparent" stroke-width="15" />
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 1 - P11 - Left or B -->
-							<svg id="bit1" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- One -->
-								<line class="one" x1="50" y1="30" x2="50" y2="70"
-								stroke="black" stroke-linecap="round" stroke-width="15" />
-								<!-- Zero -->
-								<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
-								stroke="black" fill="transparent" stroke-width="15" />
-							</svg>
-						</td>
-						<td>
-							<!-- BIT 0 - P10 - Right or A -->
-							<svg id="bit0" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Frame square -->
-								<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- One -->
-								<line class="one" x1="50" y1="30" x2="50" y2="70"
-								stroke="black" stroke-linecap="round" stroke-width="15" />
-								<!-- Zero -->
-								<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
-								stroke="black" fill="transparent" stroke-width="15" />
-							</svg>
-						</td>
-					</tr>
-				</tbody>
+		<table class="table table-responsive table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Register P1<br/>0xFF00</th>
+					<th>7</th>
+					<th>6</th>
+					<th>5</th>
+					<th>4</th>
+					<th>3</th>
+					<th>2</th>
+					<th>1</th>
+					<th>0</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Port</td>
+					<td>Not<br/>used</td>
+					<td>Not<br/>used</td>
+					<td>P15</td>
+					<td>P14</td>
+					<td>P13</td>
+					<td>P12</td>
+					<td>P11</td>
+					<td>P10</td>
+				</tr>
+				<tr>
+					<td>
+						Read<br/>Write
+					</td>
+					<td>Not<br/>used</td>
+					<td>Not<br/>used</td>
+					<td>W</td>
+					<td>W</td>
+					<td>R</td>
+					<td>R</td>
+					<td>R</td>
+					<td>R</td>
+				</tr>
+				<tr>
+					<td>
+						Value
+					</td>
+					<td>
+						<!-- BIT 7 - NOT USED -->
+						<svg id="bit7" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+						    <defs>
+						      <symbol id="not-used">
+						        <desc>Register not used</desc>
+									<!-- Frame square -->
+									<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+									stroke="black" fill="transparent" stroke-width="10"/>
+									<!-- Cross -->
+									<g stroke="black" stroke-linecap="round" stroke-width="15">
+										<line x1="30" y1="30" x2="70" y2="70" />
+										<line x1="70" y1="30" x2="30" y2="70" />
+									</g>
+						      </symbol>
+						    </defs>
+							<use xlink:href="#not-used" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 6 - NOT USED -->
+						<svg id="bit6" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<use xlink:href="#not-used" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 5 - P15 - Read buttons -->
+						<input id="P15" value="0" hidden />
+						<svg id="bit5" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Frame square -->
+							<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- One -->
+							<line class="one" x1="50" y1="30" x2="50" y2="70"
+							stroke="black" stroke-linecap="round" stroke-width="15" />
+							<!-- Zero -->
+							<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
+							stroke="black" fill="transparent" stroke-width="15" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 4 - P14 - Read directions -->
+						<input id="P14" value="0" hidden />
+						<svg id="bit4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Frame square -->
+							<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- One -->
+							<line class="one" x1="50" y1="30" x2="50" y2="70"
+							stroke="black" stroke-linecap="round" stroke-width="15" />
+							<!-- Zero -->
+							<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
+							stroke="black" fill="transparent" stroke-width="15" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 3 - P13 - Down or Start -->
+						<svg id="bit3" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Frame square -->
+							<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- One -->
+							<line class="one" x1="50" y1="30" x2="50" y2="70"
+							stroke="black" stroke-linecap="round" stroke-width="15" />
+							<!-- Zero -->
+							<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
+							stroke="black" fill="transparent" stroke-width="15" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 2 - P12 - Up or Select -->
+						<svg id="bit2" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Frame square -->
+							<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- One -->
+							<line class="one" x1="50" y1="30" x2="50" y2="70"
+							stroke="black" stroke-linecap="round" stroke-width="15" />
+							<!-- Zero -->
+							<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
+							stroke="black" fill="transparent" stroke-width="15" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 1 - P11 - Left or B -->
+						<svg id="bit1" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Frame square -->
+							<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- One -->
+							<line class="one" x1="50" y1="30" x2="50" y2="70"
+							stroke="black" stroke-linecap="round" stroke-width="15" />
+							<!-- Zero -->
+							<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
+							stroke="black" fill="transparent" stroke-width="15" />
+						</svg>
+					</td>
+					<td>
+						<!-- BIT 0 - P10 - Right or A -->
+						<svg id="bit0" xmlns="http://www.w3.org/2000/svg" version="1.1"
+						width="50" height="50" viewBox="0 0 100 100">
+							<!-- Frame square -->
+							<rect x="10" y="10" rx="10" ry="10" width="80" height="80"
+							stroke="black" fill="transparent" stroke-width="10"/>
+							<!-- One -->
+							<line class="one" x1="50" y1="30" x2="50" y2="70"
+							stroke="black" stroke-linecap="round" stroke-width="15" />
+							<!-- Zero -->
+							<ellipse class="zero" cx="50" cy="50" rx="25" ry="25"
+							stroke="black" fill="transparent" stroke-width="15" />
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>Use</td>
+					<td>Not<br/>used</td>
+					<td>Not<br/>used</td>
+					<td>
+						Select<br/>
+						Buttons<br/>
+					</td>
+					<td>
+						Select<br/>
+						Directions<br/>
+					</td>
+					<td>
+						Down<br/>
+						or<br/>
+						Start
+					</td>
+					<td>
+						Up<br/>
+						or<br/>
+						Select
+					</td>
+					<td>
+						Left<br/>
+						or<br/>
+						B<br/>
+					</td>
+					<td>
+						Right<br/>
+						or<br/>A
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<h2>Controls</h2>
+		<table class="table table-striped table table-bordered">
+			<thead>
+				<tr><th>Gameboy</th><th>Computer</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>A</td>
+					<td>Z</td>
+				</tr>
+				<tr>
+					<td>B</td>
+					<td>X</td>
+				</tr>
+				<tr>
+					<td>START</td>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>SELECT</td>
+					<td>V</td>
+				</tr>
+				<tr>
+					<td>UP</td>
+					<td>↑</td>
+				</tr>
+				<tr>
+					<td>DOWN</td>
+					<td>↓</td>
+				</tr>
+				<tr>
+					<td>LEFT</td>
+					<td>←</td>
+				</tr>
+				<tr>
+					<td>RIGHT</td>
+					<td>→</td>
+				</tr>
+			</tbody>
+		</table>
+	
+
+		<h2>How Does It Work?</h2>
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+				<h3 class="panel-title">Gameboy Programming Manual</h3>
+		    </div>
+			
+			<div class="panel-body hidden">
+		
+				<div class="panel panel-default">
+					<a href="http://students.washington.edu/fidelp/galp/megaguides/GameBoyProgrammingManual.pdf" target="_blank">
+						<div class="panel-body">
+							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							Gameboy Programming Manual
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+				<h3 class="panel-title">Gameboy CPU Manual</h3>
+		    </div>
+			
+			<div class="panel-body hidden">
+				<div class="panel panel-default">
+					<a href="http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf" target="_blank">
+						<div class="panel-body">
+							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							Gameboy CPU Manual
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+				<h3 class="panel-title">Imran Nazar</h3>
+		    </div>
+			
+			<div class="panel-body hidden">
+						
+				<div class="panel panel-default">
+					<a href="http://imrannazar.com/GameBoy-Emulation-in-JavaScript:-Input" target="_blank">
+						<div class="panel-body">
+							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							Gameboy emulation in Javascript Part 6 : Input
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+				
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+				<h3 class="panel-title">Pandocs</h3>
+		    </div>
+			
+			<div class="panel-body hidden">
+				
+				<div class="panel panel-default">
+					<a href="http://nocash.emubase.de/pandocs.htm#joypadinput" target="_blank">
+						<div class="panel-body">
+							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							Pandocs - The bible of gameboy programming
+						</div>
+					</a>
+				</div>
+				
+				<p>The eight gameboy buttons/direction keys are arranged in form of a 2x4 matrix. Select either button or direction keys by writing to this register, then read-out bit 0-3.</p>
+				<p>Note: Most programs are repeatedly reading from this port several times (the first reads used as short delay, allowing the inputs to stabilize, and only the value from the last read actually used).</p>
+
+				<h4>Usage in SGB software</h4>
+				<p>Beside for normal joypad input, SGB games mis-use the joypad register to output SGB command packets to the SNES, also, SGB programs may read out gamepad states from up to four different joypads which can be connected to the SNES.</p>
+				<p>See SGB description for details.</p>
+
+				<h4>INT 60 - Joypad Interrupt</h4>
+				<p>Joypad interrupt is requested when any of the above Input lines changes from High to Low. Generally this should happen when a key becomes pressed (provided that the button/direction key is enabled by above Bit4/5), however, because of switch bounce, one or more High to Low transitions are usually produced both when pressing or releasing a key.</p>
+
+				<h4>Using the Joypad Interrupt</h4>
+				<p>It's more or less useless for programmers, even when selecting both buttons and direction keys simultaneously it still cannot recognize all keystrokes, because in that case a bit might be already held low by a button key, and pressing the corresponding direction key would thus cause no difference. The only meaningful purpose of the keystroke interrupt would be to terminate STOP (low power) standby state.</p>
+				<p>Also, the joypad interrupt does not appear to work with CGB and GBA hardware (the STOP function can be still terminated by joypad keystrokes though).</p>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+				<h3 class="panel-title">Emulatronia</h3>
+		    </div>
+			
+		<div class="panel-body hidden">
+
+			<div class="panel panel-default">
+				<a href="http://www.emulatronia.com/doctec/consolas/gameboy/gameboy.txt" target="_blank">
+					<div class="panel-body">
+						<img src="img/gameboy_black.png" width="32" alt="Github"/>
+						Everything You Always Wanted To Know About Gameboy
+					</div>
+				</a>
+			</div>
+
+			<p>This is a very strange way of reading joypad info. There are only 8 possible button/switches on the Game Boy. <kbd>A</kbd>, <kbd>B</kbd>, <kbd>SELECT</kbd>, <kbd>START</kbd>, <kbd>UP</kbd>, <kbd>DOWN</kbd>, <kbd>LEFT</kbd>, <kbd>RIGHT</kbd>. Why they made their joypad registers in this way I'll never know. They could have used all 8 bits and you just read which one is on.</p>
+			
+			<p>This is the matrix layout for register $FF00:</p>
+
+			<pre>
+			           P14                P15          
+			            |                  |           
+			--P10-------O-Right------------O-A---------
+			            |                  |           
+			--P11-------O-Left-------------O-B---------
+			            |                  |           
+			--P12-------O-Up---------------O-Select----
+			            |                  |           
+			--P13-------O-Down-------------O-Start-----
+			            |                  |           
+			</pre>
+
+			<p>This is the logic in reading joy pad data:</p>
+
+			<ul>
+			  <li>Turn on P15 (bit 5) in $FF00</li>
+			  <li>Wait a few clock cycles</li>
+			  <li>Read $FF00 into A</li>
+			  <li>
+				  <div>Invert A</div>
+				  <div>same as EOR #$FF - just reverse all bits
+                       apparently the joy pad info returned is like the C64
+                       info. 0 means on, 1 means off. But logic tells us
+                       that it should be the other way around. So to make it
+                       less confusing we just flip the bits!
+				  </div>
+			  </li>
+			  <li>          AND A with #$0F - get only the first four bits
+                            By turning on P15 we are trying to read column
+                            P15 in the matrix layout. It contains A,B,SEL,STRT
+						</li>
+			  <li>SWAP A - #$3f becomes #$F3, it swaps hi-lo nibbles</li>
+			  <li>Store A in B for backup</li>
+			  <li>Turn on P14 (bit 4) in $FF00</li>
+			  <li>Wait a few more clock cycles</li>
+			  <li>Read $FF00 into A</li>
+			  <li>Invert A - just as above</li>
+			  <li>          AND A with #$0F - get first 4 bits
+                          - By turning on P14 we get the data for column P14
+                            in the matrix layout. It contains U,D,L,R
+</li>
+			  <li>OR A with B - put the two values together.</li>
+			  <li>Turn on P14 and P15 in $FF00 to reset.</li>
+			</ul>
+
+			<p>The button values using the above method are such:</p>
+			<table class="table table-bordered">
+				<tr><td>$80 - Start </td><td>$8 - Down </td></tr>
+				<tr><td>$40 - Select</td><td>$4 - Up   </td></tr>
+				<tr><td>$20 - B     </td><td>$2 - Left </td></tr>
+				<tr><td>$10 - A     </td><td>$1 - Right</td></tr>
+			</table>
+			<p>Let's say we held down A, Start, and Up.
+			   The value returned in accumulator A would be $94.</p>
+
+			<h4>Let's see this method in action!</h4>
+			<p>Game: Ms. Pacman</p>
+			<p>Address: $3B1</p>
+
+			<table class="table-code">
+				<tr><td>0003B1: 0003B1: 3E 20    </td><td>LD A,#$20    </td><td><- bit 5 = $20                  </td></tr>
+				<tr><td>0003B3: 0003B3: EA 00 FF </td><td>LD ($FF00),A </td><td><- turn on P15                  </td></tr>
+				<tr><td>0003B6: 0003B6: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
+				<tr><td>0003B9: 0003B9: FA 00 FF </td><td>LD A,($FF00) </td><td><- wait a few cycles            </td></tr>
+				<tr><td>0003BC: 0003BC: 2F       </td><td>CPL          </td><td><- complement (invert) EOR #$FF </td></tr>
+				<tr><td>0003BD: 0003BD: E6 0F    </td><td>AND #$0F     </td><td><- get only first 4 bits        </td></tr>
+				<tr><td>0003BF: 0003BF: CB 37    </td><td>SWAP A       </td><td><- swap it                      </td></tr>
+				<tr><td>0003C1: 0003C1: 47       </td><td>LD B,A       </td><td><- store A in B                 </td></tr>
+				<tr><td>0003C2: 0003C2: 3E 10    </td><td>LD A,#$10    </td><td><- bit 4 = $10                  </td></tr>
+				<tr><td>0003C4: 0003C4: EA 00 FF </td><td>LD ($FF00),A </td><td><- turn on P14                  </td></tr>
+				<tr><td>0003C7: 0003C7: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
+				<tr><td>0003CA: 0003CA: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
+				<tr><td>0003CD: 0003CD: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
+				<tr><td>0003D0: 0003D0: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
+				<tr><td>0003D3: 0003D3: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
+				<tr><td>0003D6: 0003D6: FA 00 FF </td><td>LD A,($FF00) </td><td><- Wait a few MORE cycles       </td></tr>
+				<tr><td>0003D9: 0003D9: 2F       </td><td>CPL          </td><td><- complement (invert)          </td></tr>
+				<tr><td>0003DA: 0003DA: E6 0F    </td><td>AND #$0F     </td><td><- get first 4 bits             </td></tr>
+				<tr><td>0003DC: 0003DC: B0       </td><td>OR B         </td><td><- put A and B together         </td></tr>
+			</table>
+
+			<p>The following routine is common on SNES as well. It clarifies that you've
+			only pressed the specified button(s) once every other frame. That way the
+			Joypad is less sensitive to wrong/bad/false movements.</p>
+
+			<table class="table-code">
+				<tr><td>0003DD: 0003DD: 57       </td><td>LD D,A       </td><td><- store A in D                </td></tr>
+				<tr><td>0003DE: 0003DE: FA 8B FF </td><td>LD A,($FF8B) </td><td><- read old joy data from ram  </td></tr>
+				<tr><td>0003E1: 0003E1: AA       </td><td>XOR D        </td><td><- toggle w/current button bit </td></tr>
+				<tr><td>0003E2: 0003E2: A2       </td><td>AND D        </td><td><- get current button bit back </td></tr>
+				<tr><td>0003E3: 0003E3: EA 8C FF </td><td>LD ($FF8C),A </td><td><- save in new Joydata storage </td></tr>
+				<tr><td>0003E6: 0003E6: 7A       </td><td>LD A,D       </td><td><- put original value in A     </td></tr>
+				<tr><td>0003E7: 0003E7: EA 8B FF </td><td>LD ($FF8B),A </td><td><- store it as old joy data    </td></tr>
+				<tr><td>                         </td><td>             </td><td>                               </td></tr>
+				<tr><td>0003EA: 0003EA: 3E 30    </td><td>LD A,#$30    </td><td><- turn on P14 and P15         </td></tr>
+				<tr><td>0003EC: 0003EC: EA 00 FF </td><td>LD ($FF00),A </td><td><- RESET Joypad?!              </td></tr>
+				<tr><td>0003EF: 0003EF: C9       </td><td>RET          </td><td><- Return from Subroutine      </td></tr>
 			</table>
 		</div>
+	</div>
 
-
-
-		<div>
-			<table>
-				<tbody>
-					<tr>
-						<td></td>
-						<td>
-							<svg id="up" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Outer circle -->
-								<circle cx="50" cy="50" r="40"
-								stroke="black" stroke-width="10" fill="transparent" />
-								
-								<!-- Arrow -->
-								<g transform="rotate(-90 50 50)" stroke="black"
-								stroke-width="10" stroke-linecap="round">
-									<!-- Arrow head -->
-									<polyline points="50 30, 70 50, 50 70"
-									 stroke-linejoin="round" fill="none" />
-									<!-- Arrow body -->
-									<line x1="30" y1="50" x2="65" y2="50" />
-								</g>
-							</svg>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>
-							<svg id="left" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Outer circle -->
-								<circle cx="50" cy="50" r="40"
-								stroke="black" stroke-width="10" fill="transparent" />
-								
-								<!-- Arrow -->
-								<g transform="rotate(180 50 50)" stroke="black"
-								stroke-width="10" stroke-linecap="round">
-									<!-- Arrow head -->
-									<polyline points="50 30, 70 50, 50 70"
-									 stroke-linejoin="round" fill="none" />
-									<!-- Arrow body -->
-									<line x1="30" y1="50" x2="65" y2="50" />
-								</g>
-							</svg>
-						</td>
-						<td></td>
-						<td>
-							<svg id="right" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Outer circle -->
-								<circle cx="50" cy="50" r="40"
-								stroke="black" stroke-width="10" fill="transparent" />
-								
-								<!-- Arrow -->
-								<g stroke="black"
-								stroke-width="10" stroke-linecap="round">
-									<!-- Arrow head -->
-									<polyline points="50 30, 70 50, 50 70"
-									 stroke-linejoin="round" fill="none" />
-									<!-- Arrow body -->
-									<line x1="30" y1="50" x2="65" y2="50" />
-								</g>
-							</svg>
-						</td>
-						<td>
-							<svg id="a" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Outer circle -->
-								<circle cx="50" cy="50" r="40"
-								stroke="black" stroke-width="10" fill="transparent" />
-		
-								<!-- Button text -->
-								<text x="50" y="65" text-anchor="middle" font-weight="bold"
-								font-family="Arial Black" font-size="50">A</text>
-							</svg>
-						</td>
-						<td>
-							<svg id="b" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Outer circle -->
-								<circle cx="50" cy="50" r="40"
-								stroke="black" stroke-width="10" fill="transparent" />
-		
-								<!-- Button text -->
-								<text x="50" y="67" text-anchor="middle" font-weight="bold"
-								font-family="Arial Black" font-size="50">B</text>
-							</svg>
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<svg id="down" class="" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="50" height="50" viewBox="0 0 100 100">
-								<!-- Outer round square -->
-								<circle cx="50" cy="50" r="40"
-								stroke="black" stroke-width="10" fill="transparent" />
-								
-								<!-- Arrow -->
-								<g transform="rotate(90 50 50)" stroke="black"
-								stroke-width="10" stroke-linecap="round">
-									<!-- Arrow head -->
-									<polyline points="50 30, 70 50, 50 70"
-									 stroke-linejoin="round" fill="none" />
-									<!-- Arrow body -->
-									<line x1="30" y1="50" x2="65" y2="50" />
-								</g>
-							</svg>
-						</td>
-						<td></td>
-						<td>
-							<svg id="start" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="135" height="50" viewBox="0 0 270 100">
-								<!-- Outer round square -->
-								<rect x="10" y="10" rx="10" ry="10" width="250" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- Button text -->
-								<text x="135" y="67" text-anchor="middle" font-weight="bold"
-								font-family="Arial Black" font-size="50">START</text>
-							</svg>
-						</td>
-						<td>
-							<svg id="select" xmlns="http://www.w3.org/2000/svg" version="1.1"
-							width="135" height="50" viewBox="0 0 270 100">
-								<!-- Outer round square -->
-								<rect x="10" y="10" rx="10" ry="10" width="250" height="80"
-								stroke="black" fill="transparent" stroke-width="10"/>
-								<!-- Button text -->
-								<text x="135" y="67" text-anchor="middle" font-weight="bold"
-								font-family="Arial Black" font-size="50">SELECT</text>
-							</svg>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+	
+	
+		<h2>Questions</h2>
+		<p>Click on the questions to submit an answer. Please include a valid reference to support your answer.</p>
+		<div class="panel panel-danger">
+		    <div class="panel-heading">
+		      <h3 class="panel-title">P14 and P15 are R/W?</h3>
+		    </div>
+			<a href="mailto:chaoticgabibo@gmail.com?Subject=Gameboy%20Gamepad" target="_blank" class="no-decoration">
+		    	<div class="panel-body">
+		      		Are ports P14 and P15 when register P1 is read? That means, are P14 and P15 Read/Write or Read Only?
+		    	</div>
+			</a>
+		</div>
+		<div class="panel panel-danger">
+		    <div class="panel-heading">
+		      <h3 class="panel-title">Reading not-used bits?</h3>
+		    </div>
+			<a href="mailto:chaoticgabibo@gmail.com?Subject=Gameboy%20Gamepad" target="_blank" class="no-decoration">
+		    	<div class="panel-body">
+		     		When reading register P1, not-used bits are read as 1 or 0? Not-used bits are garbage and should not be used by the programmer, but when coding an emulator we have to be garbage-compatible :D
+		    	</div>
+			</a>
+		</div>
+	
+		<h2>Github</h2>
+		<div class="panel panel-default">
+			<a href="https://github.com/ChaoticGabibo/goldenboy-web-gamepad" target="_blank">
+				<div class="panel-body">
+					<img src="img/github.png" width="32" alt="Github"/>
+					Github Project for this page
+				</div>
+			</a>
 		</div>
 
-	<div>
-		<h2>Controls</h3>
-		<ul class="list-group">
-		  <li class="list-group-item">
-		    <span class="badge">Z</span>A
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">X</span>B
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">C</span>START
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">V</span>SELECT
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">↑</span>UP
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">↓</span>DOWN
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">←</span>LEFT
-		  </li>
-		  <li class="list-group-item">
-		    <span class="badge">→</span>RIGHT
-		  </li>
-		  
+		<h2>Copyright</h2>
+		<ul class="media-list">
+			<li class="media">
+				<a class="pull-left" href="http://thenounproject.com/term/game-boy/42346/" target="_blank">
+				<img class="media-object" src="favicon/favicon.png" alt="Favicon" width="60">
+				</a>
+				<div class="media-body">
+				<h4 class="media-heading">Game Boy - Favicon</h4>
+				Creative Commons – Attribution (CC BY 3.0)<br/> 
+				Game Boy designed by Mike O'Brien from the Noun Project
+				</div>
+			</li>
+			<li class="media">
+				<a class="pull-left" href="http://thenounproject.com/term/game-boy/1748/" target="_blank">
+				<img class="media-object" src="img/gameboy_black.png" alt="Gameboy Black" width="60">
+				</a>
+				<div class="media-body">
+				<h4 class="media-heading">Game Boy - Black</h4>
+				Creative Commons – Attribution (CC BY 3.0)<br/>
+				Game Boy designed by Simon Child from the Noun Project
+				</div>
+			</li>
+			<li class="media">
+				<a class="pull-left" href="http://thenounproject.com/term/game-boy/1749/" target="_blank">
+				<img class="media-object" src="img/gameboy_white.png" alt="Gameboy White" width="60">
+				</a>
+				<div class="media-body">
+				<h4 class="media-heading">Game Boy - White</h4>
+				Creative Commons – Attribution (CC BY 3.0)<br/>
+				Game Boy designed by Simon Child from the Noun Project
+				</div>
+			</li>
 		</ul>
+	
 	</div>
 	
-	<div>
-		<h2>References</h3>
-	</div>
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/docs.min.js"></script>
+	<script src="js/model/key.js"></script>
+	<script>
+	function updateUI() {
+		var P1 = KEY.rb();
+		updateBit(P1 & 0x1,"#bit0");
+		updateBit(P1 & 0x2,"#bit1");
+		updateBit(P1 & 0x4,"#bit2");
+		updateBit(P1 & 0x8,"#bit3");
+		updateBit(P1 & 0x10,"#bit4");
+		updateBit(P1 & 0x20,"#bit5");
+		updateButton(KEY.isStartPressed,"#start");
+		updateButton(KEY.isSelectPressed,"#select");
+		updateButton(KEY.isAPressed,"#a");
+		updateButton(KEY.isBPressed,"#b");
+		updateDirection(KEY.isLeftPressed,"#left");
+		updateDirection(KEY.isRightPressed,"#right");
+		updateDirection(KEY.isUpPressed,"#up");
+		updateDirection(KEY.isDownPressed,"#down");
+	}
 	
-	<div>
-		<h2>Github</h3>
-	</div>
-	
-
-	<div>
-		<h2>Copyright</h3>
-	</div>
-
-
-	</div>
-	
-		<!-- Bootstrap core JavaScript -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/docs.min.js"></script>
-		<script src="js/model/key.js"></script>
-		<script>
-		function updateUI() {
-			var P1 = KEY.rb();
-			updateBit(P1 & 0x1,"#bit0");
-			updateBit(P1 & 0x2,"#bit1");
-			updateBit(P1 & 0x4,"#bit2");
-			updateBit(P1 & 0x8,"#bit3");
-			updateBit(P1 & 0x10,"#bit4");
-			updateBit(P1 & 0x20,"#bit5");
-			updateButton(KEY.isStartPressed,"#start");
-			updateButton(KEY.isSelectPressed,"#select");
-			updateButton(KEY.isAPressed,"#a");
-			updateButton(KEY.isBPressed,"#b");
-			updateDirection(KEY.isLeftPressed,"#left");
-			updateDirection(KEY.isRightPressed,"#right");
-			updateDirection(KEY.isUpPressed,"#up");
-			updateDirection(KEY.isDownPressed,"#down");
+	function updateBit(isOne,bit) {
+		if (isOne) {
+			$(bit).find('.one').show();
+			$(bit).find('.zero').hide();
+		} else {
+			$(bit).find('.one').hide();
+			$(bit).find('.zero').show();
 		}
-		
-		function updateBit(isOne,bit) {
-			if (isOne) {
-				$(bit).children('.one').show();
-				$(bit).children('.zero').hide();
-			} else {
-				$(bit).children('.one').hide();
-				$(bit).children('.zero').show();
-			}
-		}
-		
-		function updateButton(isKeyPressed,button) {
-			if (isKeyPressed) {
-				$(button).addClass('pressed');
-				$(button).children('rect').attr('fill','black');
-				$(button).children('circle').attr('fill','black');
-				$(button).children('text').attr('fill','white');
-			} else {
-				$(button).removeClass('pressed');
-				$(button).children('rect').attr('fill','transparent');
-				$(button).children('circle').attr('fill','transparent');
-				$(button).children('text').attr('fill','black');
-			}
-		}
-
-		function updateDirection(isKeyPressed,direction) {
-			if (isKeyPressed) {
-				$(direction).addClass('pressed');
-				$(direction).children('circle').attr('fill','black');
-				$(direction).children('g').attr('stroke','white');
-			} else {
-				$(direction).removeClass('pressed');
-				$(direction).children('circle').attr('fill','transparent');
-				$(direction).children('g').attr('stroke','black');
-			}
-		}
-
-		$('#bit4,#bit5').click(function() {
-			$(this).siblings('input').toggleClass('one');
-			if ($(this).siblings('input').hasClass('one')) {
-				$(this).siblings('input').attr('value','1');
-			} else {
-				$(this).siblings('input').attr('value','0');
-			}
-			KEY.wb(parseInt("00" + $("#P15").attr('value') + $("#P14").attr('value') + "0000",2));
-			updateUI();
-		});
-		
-		$(document).ready(function() {
-			KEY.reset();
-			updateUI();
-		});
+	}
 	
-		$(document).keydown(function(e) {
-			KEY.keydown(e);
-			updateUI();
-		});
-		
-		$(document).keyup(function(e) {
-			KEY.keyup(e);
-			updateUI();
-		});
-		</script>
-	</body>
-	</html>
+	function updateButton(isKeyPressed,button) {
+		if (isKeyPressed) {
+			$(button).addClass('pressed');
+			$(button).find('rect').attr('fill','black');
+			$(button).find('circle').attr('fill','black');
+			$(button).find('text').attr('fill','white');
+		} else {
+			$(button).removeClass('pressed');
+			$(button).find('rect').attr('fill','transparent');
+			$(button).find('circle').attr('fill','transparent');
+			$(button).find('text').attr('fill','black');
+		}
+	}
+
+	function updateDirection(isKeyPressed,direction) {
+		if (isKeyPressed) {
+			$(direction).addClass('pressed');
+			$(direction).find('circle').attr('fill','black');
+			$(direction).find('g').attr('stroke','white');
+		} else {
+			$(direction).removeClass('pressed');
+			$(direction).find('circle').attr('fill','transparent');
+			$(direction).find('g').attr('stroke','black');
+		}
+	}
+
+	$('#bit4,#bit5').click(function() {
+		$(this).siblings('input').toggleClass('one');
+		if ($(this).siblings('input').hasClass('one')) {
+			$(this).siblings('input').attr('value','1');
+		} else {
+			$(this).siblings('input').attr('value','0');
+		}
+		KEY.wb(parseInt("00" + $("#P15").attr('value') + $("#P14").attr('value') + "0000",2));
+		updateUI();
+	});
+	
+	$(".panel-heading").click(function(){
+		$(this).siblings(".panel-body").toggleClass("hidden");
+	});
+	
+	$(document).ready(function() {
+		KEY.reset();
+		updateUI();
+	});
+
+	$(document).keydown(function(e) {
+		e.preventDefault();
+		KEY.keydown(e);
+		updateUI();
+	});
+	
+	$(document).keyup(function(e) {
+		KEY.keyup(e);
+		updateUI();
+	});
+	</script>
+	
+</body>
+</html>

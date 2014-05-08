@@ -5,21 +5,35 @@
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
 	vertical-align: middle;
-}
-.reg-table {
-	width: 600px;
-}
-
-.bit {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select:none; user-select:none;
-}
-
-td {
 	text-align: center;
 }
 
-th {
+td, th, h1, h2 {
 	text-align: center;
 }
+
+a {
+	text-decoration: none !important;
+	color: inherit;
+}
+
+.panel-footer:hover {
+	cursor: pointer;
+}
+
+.container {
+	width: 800px;
+}
+
+.table-code > tbody > tr > th,
+.table-code > tfoot > tr > th,
+.table-code > thead > tr > th,
+.table-code > thead > tr > td,
+.table-code > tbody > tr > td,
+.table-code > tfoot > tr > td {
+	vertical-align: middle;
+	text-align: left;
+	padding: 5px;
+	padding-right: 30px;
+}
+
