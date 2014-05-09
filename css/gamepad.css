@@ -25,15 +25,4 @@ a {
 	width: 800px;
 }
 
-.table-code > tbody > tr > th,
-.table-code > tfoot > tr > th,
-.table-code > thead > tr > th,
-.table-code > thead > tr > td,
-.table-code > tbody > tr > td,
-.table-code > tfoot > tr > td {
-	vertical-align: middle;
-	text-align: left;
-	padding: 5px;
-	padding-right: 30px;
-}
 

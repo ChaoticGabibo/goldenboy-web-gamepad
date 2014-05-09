@@ -420,7 +420,7 @@
 				<div class="panel panel-default">
 					<a href="http://students.washington.edu/fidelp/galp/megaguides/GameBoyProgrammingManual.pdf" target="_blank">
 						<div class="panel-body">
-							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							<img src="img/gameboy_white.png" width="32" alt="Github"/>
 							Gameboy Programming Manual
 						</div>
 					</a>
@@ -438,7 +438,7 @@
 				<div class="panel panel-default">
 					<a href="http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf" target="_blank">
 						<div class="panel-body">
-							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							<img src="img/gameboy_white.png" width="32" alt="Github"/>
 							Gameboy CPU Manual
 						</div>
 					</a>
@@ -457,7 +457,7 @@
 				<div class="panel panel-default">
 					<a href="http://imrannazar.com/GameBoy-Emulation-in-JavaScript:-Input" target="_blank">
 						<div class="panel-body">
-							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							<img src="img/gameboy_white.png" width="32" alt="Github"/>
 							Gameboy emulation in Javascript Part 6 : Input
 						</div>
 					</a>
@@ -476,7 +476,7 @@
 				<div class="panel panel-default">
 					<a href="http://nocash.emubase.de/pandocs.htm#joypadinput" target="_blank">
 						<div class="panel-body">
-							<img src="img/gameboy_black.png" width="32" alt="Github"/>
+							<img src="img/gameboy_white.png" width="32" alt="Github"/>
 							Pandocs - The bible of gameboy programming
 						</div>
 					</a>
@@ -508,7 +508,7 @@
 			<div class="panel panel-default">
 				<a href="http://www.emulatronia.com/doctec/consolas/gameboy/gameboy.txt" target="_blank">
 					<div class="panel-body">
-						<img src="img/gameboy_black.png" width="32" alt="Github"/>
+						<img src="img/gameboy_white.png" width="32" alt="Github"/>
 						Everything You Always Wanted To Know About Gameboy
 					</div>
 				</a>
@@ -518,17 +518,17 @@
 			
 			<p>This is the matrix layout for register $FF00:</p>
 
-			<pre>
-			           P14                P15          
-			            |                  |           
-			--P10-------O-Right------------O-A---------
-			            |                  |           
-			--P11-------O-Left-------------O-B---------
-			            |                  |           
-			--P12-------O-Up---------------O-Select----
-			            |                  |           
-			--P13-------O-Down-------------O-Start-----
-			            |                  |           
+			<pre style="text-align:center;">
+           P14                P15          
+            |                  |           
+--P10-------O-Right------------O-A---------
+            |                  |           
+--P11-------O-Left-------------O-B---------
+            |                  |           
+--P12-------O-Up---------------O-Select----
+            |                  |           
+--P13-------O-Down-------------O-Start-----
+            |                  |           
 			</pre>
 
 			<p>This is the logic in reading joy pad data:</p>
@@ -578,45 +578,45 @@
 			<p>Game: Ms. Pacman</p>
 			<p>Address: $3B1</p>
 
-			<table class="table-code">
-				<tr><td>0003B1: 0003B1: 3E 20    </td><td>LD A,#$20    </td><td><- bit 5 = $20                  </td></tr>
-				<tr><td>0003B3: 0003B3: EA 00 FF </td><td>LD ($FF00),A </td><td><- turn on P15                  </td></tr>
-				<tr><td>0003B6: 0003B6: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
-				<tr><td>0003B9: 0003B9: FA 00 FF </td><td>LD A,($FF00) </td><td><- wait a few cycles            </td></tr>
-				<tr><td>0003BC: 0003BC: 2F       </td><td>CPL          </td><td><- complement (invert) EOR #$FF </td></tr>
-				<tr><td>0003BD: 0003BD: E6 0F    </td><td>AND #$0F     </td><td><- get only first 4 bits        </td></tr>
-				<tr><td>0003BF: 0003BF: CB 37    </td><td>SWAP A       </td><td><- swap it                      </td></tr>
-				<tr><td>0003C1: 0003C1: 47       </td><td>LD B,A       </td><td><- store A in B                 </td></tr>
-				<tr><td>0003C2: 0003C2: 3E 10    </td><td>LD A,#$10    </td><td><- bit 4 = $10                  </td></tr>
-				<tr><td>0003C4: 0003C4: EA 00 FF </td><td>LD ($FF00),A </td><td><- turn on P14                  </td></tr>
-				<tr><td>0003C7: 0003C7: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
-				<tr><td>0003CA: 0003CA: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
-				<tr><td>0003CD: 0003CD: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
-				<tr><td>0003D0: 0003D0: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
-				<tr><td>0003D3: 0003D3: FA 00 FF </td><td>LD A,($FF00) </td><td>                                </td></tr>
-				<tr><td>0003D6: 0003D6: FA 00 FF </td><td>LD A,($FF00) </td><td><- Wait a few MORE cycles       </td></tr>
-				<tr><td>0003D9: 0003D9: 2F       </td><td>CPL          </td><td><- complement (invert)          </td></tr>
-				<tr><td>0003DA: 0003DA: E6 0F    </td><td>AND #$0F     </td><td><- get first 4 bits             </td></tr>
-				<tr><td>0003DC: 0003DC: B0       </td><td>OR B         </td><td><- put A and B together         </td></tr>
-			</table>
+<pre>
+0003B1: 0003B1: 3E 20          LD A,#$20      <- bit 5 = $20
+0003B3: 0003B3: EA 00 FF       LD ($FF00),A   <- turn on P15
+0003B6: 0003B6: FA 00 FF       LD A,($FF00)
+0003B9: 0003B9: FA 00 FF       LD A,($FF00)   <- wait a few cycles
+0003BC: 0003BC: 2F             CPL            <- complement (invert) EOR #$ff
+0003BD: 0003BD: E6 0F          AND #$0F       <- get only first 4 bits
+0003BF: 0003BF: CB 37          SWAP A         <- swap it
+0003C1: 0003C1: 47             LD B,A         <- store A in B
+0003C2: 0003C2: 3E 10          LD A,#$10      <- bit 4 = $10
+0003C4: 0003C4: EA 00 FF       LD ($FF00),A   <- turn on P14
+0003C7: 0003C7: FA 00 FF       LD A,($FF00)
+0003CA: 0003CA: FA 00 FF       LD A,($FF00)
+0003CD: 0003CD: FA 00 FF       LD A,($FF00)
+0003D0: 0003D0: FA 00 FF       LD A,($FF00)
+0003D3: 0003D3: FA 00 FF       LD A,($FF00)
+0003D6: 0003D6: FA 00 FF       LD A,($FF00)   <- Wait a few MORE cycles
+0003D9: 0003D9: 2F             CPL            <- complement (invert)
+0003DA: 0003DA: E6 0F          AND #$0F       <- get first 4 bits
+0003DC: 0003DC: B0             OR B           <- put A and B together</pre>
 
 			<p>The following routine is common on SNES as well. It clarifies that you've
 			only pressed the specified button(s) once every other frame. That way the
 			Joypad is less sensitive to wrong/bad/false movements.</p>
 
-			<table class="table-code">
-				<tr><td>0003DD: 0003DD: 57       </td><td>LD D,A       </td><td><- store A in D                </td></tr>
-				<tr><td>0003DE: 0003DE: FA 8B FF </td><td>LD A,($FF8B) </td><td><- read old joy data from ram  </td></tr>
-				<tr><td>0003E1: 0003E1: AA       </td><td>XOR D        </td><td><- toggle w/current button bit </td></tr>
-				<tr><td>0003E2: 0003E2: A2       </td><td>AND D        </td><td><- get current button bit back </td></tr>
-				<tr><td>0003E3: 0003E3: EA 8C FF </td><td>LD ($FF8C),A </td><td><- save in new Joydata storage </td></tr>
-				<tr><td>0003E6: 0003E6: 7A       </td><td>LD A,D       </td><td><- put original value in A     </td></tr>
-				<tr><td>0003E7: 0003E7: EA 8B FF </td><td>LD ($FF8B),A </td><td><- store it as old joy data    </td></tr>
-				<tr><td>                         </td><td>             </td><td>                               </td></tr>
-				<tr><td>0003EA: 0003EA: 3E 30    </td><td>LD A,#$30    </td><td><- turn on P14 and P15         </td></tr>
-				<tr><td>0003EC: 0003EC: EA 00 FF </td><td>LD ($FF00),A </td><td><- RESET Joypad?!              </td></tr>
-				<tr><td>0003EF: 0003EF: C9       </td><td>RET          </td><td><- Return from Subroutine      </td></tr>
-			</table>
+<pre>
+0003DD: 0003DD: 57             LD D,A         <- store A in D
+0003DE: 0003DE: FA 8B FF       LD A,($FF8B)   <- read old joy data from ram
+0003E1: 0003E1: AA             XOR D          <- toggle w/current button bit
+0003E2: 0003E2: A2             AND D          <- get current button bit back
+0003E3: 0003E3: EA 8C FF       LD ($FF8C),A   <- save in new Joydata storage
+0003E6: 0003E6: 7A             LD A,D         <- put original value in A
+0003E7: 0003E7: EA 8B FF       LD ($FF8B),A   <- store it as old joy data
+
+
+0003EA: 0003EA: 3E 30          LD A,#$30      <- turn on P14 and P15
+0003EC: 0003EC: EA 00 FF       LD ($FF00),A   <- RESET Joypad?!
+0003EF: 0003EF: C9             RET            <- Return from Subroutine
+</pre>
 		</div>
 	</div>
 
