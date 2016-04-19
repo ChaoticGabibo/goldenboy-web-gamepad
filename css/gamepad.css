@@ -8,6 +8,15 @@
 	text-align: center;
 }
 
+.screencell {
+	width: 30px;
+	height: 30px;
+}
+
+#screen {
+	line-height: 30px;
+}
+
 td, th, h1, h2 {
 	text-align: center;
 }
